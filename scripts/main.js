@@ -1,5 +1,85 @@
+//Klok
+//bron: https://greensock.com/forums/topic/18013-clock-animation-not-playing-on-setinterval/?tab=comments#comment-82442
+$(document).ready(function() {
+  var datetime = new Date(),
+    h = datetime.getHours(),
+    m = datetime.getMinutes(),
+    s = datetime.getSeconds();
 
-//Tijd in cijfers*
+  //h = 12;
+
+  if (h>7 & h<13) {
+    animateMorningBackground();
+  }
+
+  if (h>12 & h<20 ){
+    animateDayBackground();
+  }
+
+  if (h>20 || h>0 & h<7){
+    animateNightBackground();
+  }
+
+  var myPointerH = $(".clockH");
+  var myPointerM = $(".clockM");
+  var myPointerS = $(".clockS");
+
+  var oneSecond = 60 / 60; // 1 second
+  var oneHour = 60 * 60; //1 hour tween
+  var twelveHours = 12 * 60 * 60; //12 hour tween
+
+  TweenMax.set(".second, .hour, .minute", {
+    yPercent: -50,
+    transformOrigin: "50% 100%"
+  });
+
+  var hourTween = TweenMax.to(myPointerH, twelveHours, {
+    rotation: "360_cw",
+    ease: Linear.easeNone,
+    repeat: -1,
+    paused: true
+  });
+
+  var minuteTween = TweenMax.to(myPointerM, oneHour, {
+    rotation: "360",
+    ease: Linear.easeNone,
+    repeat: -1,
+    paused: true
+  });
+
+  var secondsTween = TweenMax.to(myPointerS, oneSecond, {
+    rotation: "360",
+    ease: Linear.easeNone,
+    repeat: -1,
+    paused: true
+  });
+
+  function showTime() {
+    (datetime = new Date()),
+      (h = datetime.getHours()),
+      (m = datetime.getMinutes()),
+      (s = datetime.getSeconds());
+
+    minutesAsSeconds = m * 60;
+    hoursAsSeconds = h * 60 * 60;
+    secondsAsSeconds = s / 60;
+
+    hourTween.progress(hoursAsSeconds / twelveHours);
+    minuteTween.progress(minutesAsSeconds / oneHour);
+    secondsTween.progress(secondsAsSeconds / oneSecond);
+  }
+  showTime();
+
+  setInterval(function() {
+    showTime();
+  }, 1000);
+});
+//Klok
+
+
+//Tijd in cijfers
+//Bron: https://greensock.com/forums/topic/17225-flip-clock-effect/?tab=comments#comment-77132
+
 // set 3d transforms
 TweenMax.set("#clock", {perspective:1500, scale:0.7125})
 TweenMax.set(".upper", {rotationX:0.01, transformOrigin:"50% 100%"})
@@ -73,88 +153,44 @@ function tick(mc,i, toZero=false){
 //Tijd in cijfers
 
 
+//Achtergrond + tekst
+function animateMorningBackground(){
+  //alert("Het is momenteel ochtend");
+  document.body.style.backgroundImage = "url('images/sunriseBackground.jpg')";
+  document.getElementById('tekst').innerHTML = "Het is momenteel ochtend";
+}
+
+function animateDayBackground(){
+  //alert("Het is momenteel overdag");
+  document.body.style.backgroundImage = "url('images/dayBackground.jpg')";
+  document.getElementById('tekst').innerHTML = "Het is momenteel overdag";
+}
+
+function animateNightBackground(){
+  //alert("Het is momenteel nacht");
+  document.body.style.backgroundImage = "url('images/nightBackground.jpg')";
+  document.getElementById('tekst').innerHTML = "Het is momenteel nacht";
+}
+//Achtergrond + tekst
+
+//Datum
+var today = new Date();
+document.getElementById('date').innerHTML = today.getDate() + "-" + today.getMonth() + 1 + "-" + today.getFullYear();var d = new Date();
+//Datum
 
 
-$(document).ready(function() {
-  var datetime = new Date(),
-    h = datetime.getHours(),
-    m = datetime.getMinutes(),
-    s = datetime.getSeconds();
+//TweenMax.to(".logospacex", 6, {
+  //left:600,
+  //backgroundColor:"red",
+  //padding: 20,
+  //borderColor:"white",
+  //borderRadius:"50%"
+//});
 
-  var myPointerH = $(".clockH");
-  var myPointerM = $(".clockM");
-  var myPointerS = $(".clockS");
-
-  var oneSecond = 60 / 60; // 1 second
-  var oneHour = 60 * 60; //1 hour tween
-  var twelveHours = 12 * 60 * 60; //12 hour tween
-
-  TweenMax.set(".second, .hour, .minute", {
-    yPercent: -50,
-    transformOrigin: "50% 100%"
-  });
-
-  var hourTween = TweenMax.to(myPointerH, twelveHours, {
-    rotation: "360_cw",
-    ease: Linear.easeNone,
-    repeat: -1,
-    paused: true
-  });
-
-  var minuteTween = TweenMax.to(myPointerM, oneHour, {
-    rotation: "360",
-    ease: Linear.easeNone,
-    repeat: -1,
-    paused: true
-  });
-
-  var secondsTween = TweenMax.to(myPointerS, oneSecond, {
-    rotation: "360",
-    ease: Linear.easeNone,
-    repeat: -1,
-    paused: true
-  });
-
-  function showTime() {
-    (datetime = new Date()),
-      (h = datetime.getHours()),
-      (m = datetime.getMinutes()),
-      (s = datetime.getSeconds());
-
-    minutesAsSeconds = m * 60;
-    hoursAsSeconds = h * 60 * 60;
-    secondsAsSeconds = s / 60;
-
-    hourTween.progress(hoursAsSeconds / twelveHours);
-    minuteTween.progress(minutesAsSeconds / oneHour);
-    secondsTween.progress(secondsAsSeconds / oneSecond);
-    console.log(hoursAsSeconds, minutesAsSeconds, secondsAsSeconds);
-  }
-  showTime();
-
-  setInterval(function() {
-    showTime();
-  }, 1000);
-});
-
-
-
-
-
-
-
-/*TweenMax.to(".logospacex", 6, {
-  left:600,
-  backgroundColor:"red",
-  padding: 20,
-  borderColor:"white",
-  borderRadius:"50%"
-});
-*/
 
 /*TweenMax.to(".logospacex", 6, {x:600, rotation:360, scale:0.5});*/
 /*TweenMax.to(".logospacex", 2, {x:600, ease:Back.easeOut});*/
 /*TweenMax.to(".logospacex", 2, {x:600, ease:Elastic.easeOut});*/
 /*TweenMax.to(".logospacex", 2, {x:600, ease:Bounce.easeOut});*/
 
-TweenMax.from(".logospacex", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut});
+//TweenMax.from(".logospacex", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut});
