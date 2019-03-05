@@ -124,7 +124,7 @@ h1{
   width:50px;
   height:120px;
   font: 60px 'Exo', sans-serif;
-  color: black;
+  color: white;
 }
 
 .colon {
@@ -133,7 +133,7 @@ h1{
   font: 60px 'Exo', sans-serif;
   top:-70px;
   left:-2px;
-  color: black;
+  color: white;
 }
 
 .base span {
