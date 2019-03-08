@@ -8,7 +8,7 @@ function clock() {
 
 	seconds = time.getSeconds();
 
-  //hours = 15;
+  //hours = 7;
 
   if (hours>6 & hours<13) {
     animateMorning();
@@ -80,29 +80,9 @@ document.getElementById('date').innerHTML = today.getDate() + "-" + today.getMon
 
 //Animaties met TweenMax
 TweenMax.from(".titel", 5, {x:-600, ease:Elastic.easeOut});
-TweenMax.from(".logospacex", 4, {x:600, rotation:300, scale:0.5, delay: 2});
-TweenMax.from(".picture", 4, {x:600, rotation:300, scale:0.5, delay: 2});
+TweenMax.from(".logospacex", 4, {opacity: 0, x:600, rotation:300, scale:0.5, delay: 2});
+TweenMax.from(".picture", 4, {opacity: 0, x:600, rotation:300, scale:0.5, delay: 2});
 TweenMax.from(".box1", 2, {opacity: 0, ease:Bounce.easeOut, delay: 5});
 TweenMax.from(".box3", 2, {opacity: 0, ease:Bounce.easeOut, delay: 6});
 TweenMax.from(".box4", 2, {opacity: 0, ease:Bounce.easeOut, delay: 7});
-//Animaties met TweenMax
-
-
-
-/*TweenMax.to(".logospacex", 6, {
-  left:500,
-  backgroundColor:"#E5E5E5",
-  padding: 20,
-  borderColor:"white",
-  borderRadius:"50%"
-});
-
-
-TweenMax.to(".logospacex", 6, {x:600, rotation:360, scale:0.5});
-TweenMax.to(".logospacex", 2, {x:600, ease:Back.easeOut});
-TweenMax.to(".logospacex", 2, {x:600, ease:Elastic.easeOut});
-TweenMax.to(".logospacex", 2, {x:600, ease:Bounce.easeOut});
-
-TweenMax.from(".logospacex", 0.5, {opacity:0, scale:0, ease:Bounce.easeOut});*/
-
 //Animaties met TweenMax

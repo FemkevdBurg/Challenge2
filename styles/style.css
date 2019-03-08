@@ -15,6 +15,7 @@ body {
 body {
   font-size: 14px;
   font-family: 'SourceSansPro', Arial, sans-serif;
+  color: white;
   max-width: 360px;
   margin-left: 0px;
   margin-top: -50px;
@@ -23,11 +24,9 @@ body {
   grid-template-columns: 1fr;
   grid-gap: 0px;
 
-  font-family: Helvetica;
-  color: white;
-
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 .header{
@@ -49,7 +48,7 @@ h1{
   font-size: 20px;
   font-weight: lighter;
   text-align: center;
-  font-family: Exo;
+  font-family: 'Exo', sans-serif;
 }
 
 #info{
@@ -170,8 +169,6 @@ p{
     margin-left: 50px;
   }
 
-
-
 /*Breakpoint naar laptop*/
 @media only screen and (min-width: 1366px){
 
@@ -231,10 +228,9 @@ p{
     grid-column: 1/2;
     grid-row: 6;
     margin-top: 220px;
-    margin-left: -180px;
+    margin-left: -40px;
+    position: fixed
   }
-
-
 
   /*Breakpoint naar desktop*/
   @media only screen and (min-width: 1920px) and (max-width: 1920px){
@@ -242,9 +238,6 @@ p{
     body{
       width: 1920px;;
       max-width: 1920px;
-
-      background-image: url("../images/background_1920.png");
-      background-repeat: repeat;
 
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -255,6 +248,33 @@ p{
       width: 900px;
       text-align: center;
       margin-left: 1000px;
+    }
+
+    #info{
+      width: 1000px;
+      height: 400px;
+      margin-left: -150px;
+      margin-top: 380px;
+    }
+
+    .pictureMomentOfDay img{
+      width: 200px;
+      height: 200px;
+    }
+
+    .box2{
+      margin-top: 0px;
+      margin-left: 50px;
+    }
+
+    .box3{
+      margin-left: -825px;
+      margin-top: 200px;
+    }
+
+    .box4{
+      margin-top: 220px;
+      margin-left: -40px;
     }
 
 
