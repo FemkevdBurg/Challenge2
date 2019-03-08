@@ -8,7 +8,7 @@ function clock() {
 
 	seconds = time.getSeconds();
 
-  hours = 15;
+  //hours = 15;
 
   if (hours>6 & hours<13) {
     animateMorning();
