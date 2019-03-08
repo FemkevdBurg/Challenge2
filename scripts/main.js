@@ -8,7 +8,7 @@ function clock() {
 
 	seconds = time.getSeconds();
 
-  hours = 0;
+  hours = 15;
 
   if (hours>6 & hours<13) {
     animateMorning();
@@ -52,7 +52,7 @@ function animateMorning(){
 function animateDay(){
   document.body.style.backgroundImage = "url('images/dayBackground.jpg')";
   document.getElementById('tekst').innerHTML = "Het is momenteel overdag";
-  document.getElementById('info').style.backgroundColor = "white";
+  document.getElementById('info').style.backgroundColor = "grey";
   document.getElementById('picture').src = "images/sun.png";
 }
 
