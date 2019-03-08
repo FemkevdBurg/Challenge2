@@ -43,7 +43,7 @@ body {
   margin-top: 80px;
 }
 
-img{
+.logo{
   margin-top: 0px;
   margin-left: 20px;
 }
@@ -58,7 +58,50 @@ h1{
   font-family: Exo;
 }
 
-/*Klok*/
+#info{
+  opacity: 0.8;
+  width: 300px;
+  height: 450px;
+  margin-left: 40px;
+}
+
+p{
+  font: 30px 'Exo', sans-serif, black;
+  width: 20px;
+}
+
+.datum{
+  width: 250px;
+  height: 70px;
+  margin-top: 0px;
+  margin-left: 20px;
+  color: black;
+}
+
+#date{
+  font: 30px 'Exo', sans-serif;
+  margin-left: 90px;
+  margin-top: 30px;
+}
+
+.flex-containerDatum{
+  display: flex;
+  z-index: 20;
+  padding: 5px;
+}
+
+.flex-itemTitelDatum{
+  flex: wrap;
+}
+
+.flex-itemDate{
+  flex: wrap;
+  margin-left: 100px;
+}
+
+
+/*
+//Klok
 #container{
   display: block;
   position: absolute;
@@ -79,8 +122,8 @@ h1{
   position: absolute;
   height: 70px;
   width: 10px;
-  background-color: pink;
   border-radius: 10px;
+  border-color: black;
 }
 
 .second{
@@ -103,9 +146,16 @@ h1{
 
   background-color: black;
 }
-/*Klok*/
-
-/*Tijd in cijfers*/
+//Klok
+*/
+.pictureMomentOfDay img{
+  width: 100px;
+  height: 100px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+/*
+//Tijd in cijfers
 #clock {
   margin-top: 220px;
   text-align: center;
@@ -115,7 +165,7 @@ h1{
   margin-left: -600px;
   width:1000px;
   height:200px;
-  text-align:center;*/
+  text-align:center;*//*
 }
 
 .num {
@@ -124,7 +174,7 @@ h1{
   width:50px;
   height:120px;
   font: 60px 'Exo', sans-serif;
-  color: white;
+  color: black;
 }
 
 .colon {
@@ -133,7 +183,7 @@ h1{
   font: 60px 'Exo', sans-serif;
   top:-70px;
   left:-2px;
-  color: white;
+  color: black;
 }
 
 .base span {
@@ -159,46 +209,22 @@ h1{
   position:relative;
   top:-100%;
 }
+*/
 /*Tijd in cijfers*/
 
-p{
-  font: 20px 'Exo', sans-serif, white;
-  width: 20px;
-}
-
-.datum{
-  width: 250px;
-  height: 70px;
-  margin-top: 0px;
-  margin-left: 60px;
-  background-color: white;
+.clock{
   color: black;
-}
-
-#date{
-  font: 20px 'Exo', sans-serif;
-  margin-left: 60px;
-}
-
-.flex-containerDatum{
-  display: flex;
-  z-index: 20;
-  padding: 5px;
-}
-
-.flex-itemTitelDatum{
-  flex: wrap;
-}
-
-.flex-itemDate{
-  flex: wrap;
-  margin-left: 100px;
+  font-family: 'Exo', sans-serif;
+  font-size: 30px;
+  margin-left: 90px;
+  margin-top: 30px;
 }
 
 .momentVanDeDag p{
-  width: 400px;
+  width: 300px;
   text-align: center;
-  margin-top: -40px;
+  margin-top: 50px;
+  color: black;
 }
 
 /* -------------------- LAYOUT -------------------- */
